@@ -1,4 +1,4 @@
-	name: Update README with Changelog
+name: Update README with Changelog
 
 on:
   push:
