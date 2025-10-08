@@ -1,0 +1,21 @@
+name: Generate Changelog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Changelog Generator
+        uses: timfallmk/github-changelog-generator-action@0.0.3
+        with:
+          since-tag: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repo: your-org/your-repo
