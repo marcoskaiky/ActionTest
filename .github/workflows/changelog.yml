@@ -32,7 +32,7 @@ jobs:
           fi
           
           # Adiciona a nova entrada com data e hora
-          sed -i "s|## Changelog|## Changelog\n- $(date '+%Y-%m-%d %H:%M') - $COMMIT_MESSAGE|" README.md
+          sed -i "s|## Changelog|## Changelog\n- $(TZ='America/Sao_Paulo' date '+%Y-%m-%d %H:%M') - $COMMIT_MESSAGE|" README.md
 
       - name: Commit changes
         run: |
